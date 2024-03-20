@@ -1,0 +1,403 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --onepix: calc(1vh + 1vw);
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #04053D;
+    color: white;
+}
+
+header {
+    display: flex;
+    /* justify-content: space-around; */
+    padding: 0 5rem 0 5rem;
+    align-items: center;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 110rem;
+}
+
+.user {
+    border: 0.3rem solid white;
+    max-width: 15rem;
+    padding: 0.5rem;
+    height: 4rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.user_img {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.user_name {
+
+    font-size: 2rem;
+}
+
+.continue {
+    font-size: 4rem;
+    flex-grow: 3;
+}
+
+.line {
+    border-bottom: 0.1rem solid white;
+    max-width: 120rem;
+    margin: auto;
+    position: relative;
+    margin-bottom: 3rem;
+
+}
+
+.line::after {
+    position: absolute;
+    content: '';
+    display: inline;
+    top: -0.25rem;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 0.3rem solid white;
+    border-radius: 50%;
+}
+
+.line::before {
+    position: absolute;
+    content: '';
+    display: inline;
+    top: -0.25rem;
+    /* right: 10px; */
+    left: 0;
+    width: 0px;
+    height: 0px;
+    border: 0.3rem solid white;
+    border-radius: 50%;
+}
+
+
+
+.workouts {
+    /* background-color: red; */
+
+    margin-bottom: 2rem;
+
+
+}
+
+.games_text {
+    font-size: 2.5rem;
+    margin-bottom: 10px
+}
+
+.games {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 0.1rem;
+    padding: 1rem 1rem 0 1rem;
+    flex-wrap: wrap;
+}
+
+.game {
+    margin-bottom: 1rem;
+    border: 2px;
+    background-color: #FDFF73;
+    border-radius: 50px;
+    width: 20rem;
+    height: 20rem;
+}
+
+/* .game_link{
+    
+} */
+
+/* .buttons{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+} */
+
+.workout_button {
+    width: 100px;
+    height: 50px;
+}
+
+.small_windows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.leaderboard {
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 40%;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+.leaderboard_line {
+    border-bottom: 0.1rem solid white;
+    max-width: 45rem;
+    margin: auto;
+    /* position: relative; */
+}
+
+.leaderboard_list {
+    margin-left: 1.2rem;
+}
+
+.directory {
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 40%;
+    padding: 1rem 3rem 1rem 3rem;
+}
+
+.directory_line {
+    border-bottom: 0.1rem solid white;
+    max-width: 45rem;
+    margin: auto;
+}
+
+
+.navigation_line {
+    border: 1px solid white;
+}
+
+
+.navigation {
+    /* padding-top: 2rem; */
+    /* margin-bottom: 5rem; */
+    display: flex;
+    overflow-x: hidden;
+    /* cursor: grab; */
+    scroll-behavior: auto;
+    user-select: none;
+}
+
+.page {
+    line-height: 2rem;
+    min-width: calc(var(--onepix) * 3);
+    height: calc(var(--onepix) * 3);
+    color: black;
+    margin: calc(var(--onepix) * 0.3);
+    border: 2px solid white;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    font-size: 3rem;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.active_page{
+    background-color:white !important;
+    color: #04053D;
+    
+}
+
+.active_page[data-complited]{
+    border-color: white !important;
+    background-color: green !important;
+    color: #FFF !important;
+}
+
+.page[data-complited]{
+    background-color: green;
+    border-color: green;
+}
+
+.slider_main {
+    display: flex;
+}
+
+.slider_page {
+    background-color:#04053D;
+    color: black;
+    /* width: 100vw; */
+    height: calc(100vh - var(--onepix) * 3.2);
+    /* display: none; */
+}
+
+.slider_page {
+    display: none;
+}
+
+
+
+.active {
+    display: block;
+}
+
+
+.keyboard_container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* .keyboard {
+    display: flex;
+    flex-direction: column;
+} */
+
+.keyboard_row {
+    display: flex;
+    font-family: 'Verdana', Times, serif;
+    margin-bottom: 7px;
+    font-size: 1.4rem;
+}
+
+
+/* .key_enter{
+    grid-column: 13/15;
+} */
+
+
+
+
+.keyboard_row>div:not(.key_empty) {
+    border: 1px solid white;
+
+}
+
+.keyboard_row>div>div {
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+.keyboard_row>div>div:nth-child(1) {
+    padding-bottom: 2px;
+}
+
+
+.key_space {
+    width: calc(100% / 18 * 6) !important;
+}
+
+.one_word_button_leveling_left {
+    flex-grow: 0.5 !important;
+}
+
+
+.keyboard_row>div {
+    width: calc(100% / 18);
+    overflow: hidden;
+    height: 45px;
+    margin-right: calc(100% / 120);
+    padding: 7px;
+    flex-grow: 1;
+    border-radius: 10%;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.keyboard_row>div:last-child {
+    margin-right: 0;
+}
+
+.keyboard_row:first-child>div {
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.key_enter,
+.key_caps {
+    width: calc(100% / 18 * 2.13) !important;
+
+}
+
+.key_shift {
+    width: calc(100% / 18 * 2.75) !important;
+}
+
+.half_button {
+    width: calc(100% / 18 / 2) !important;
+    margin-right: 0 !important;
+}
+
+.key_backspace {
+    width: calc(100% / 18 * 2) !important;
+    font-size: 1.2rem;
+}
+
+.key_tab,
+.key_slash {
+    width: calc(100% / 18 * 1.5) !important;
+}
+
+.key_bottom {
+    width: calc(100%/18 * 1.5) !important;
+}
+
+.keyboard_row:nth-child(1)>div:nth-child(n+17) {
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.keyboard_row:nth-child(2)>div:nth-child(n+15) {
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.keyboard_row:nth-child(3)>div:nth-child(n+15) {
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.keyboard_row:nth-child(1)>div:nth-child(17) {
+    margin-left: 1rem;
+}
+
+.keyboard_row:nth-child(2)>div:nth-child(15) {
+    margin-left: 1rem;
+}
+
+.keyboard_row:nth-child(3)>div:nth-child(15) {
+    margin-left: 1rem;
+}
+
+.keyboard_row:nth-child(4)>div:nth-child(15) {
+    margin-left: 1rem;
+}
+
+.keyboard_row:nth-child(5)>div:nth-child(13) {
+    margin-left: 1rem;
+}
+
+.keyboard_row:nth-child(6)>div:nth-child(9) {
+    margin-left: 1rem
+}
+
+.key_arrows {
+    align-items: center;
+}
+
+.nav_container{
+    max-width: calc(var(--onepix) * 54);
+    margin: 0 auto;
+    padding: 8px 0;
+}
