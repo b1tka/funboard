@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+h1{
+    margin: 0;
+}
+
 :root {
     --onepix: calc(1vh + 1vw);
 }
@@ -191,19 +195,20 @@ header {
     /* cursor: grab; */
     scroll-behavior: auto;
     user-select: none;
+    margin-bottom: 10px;
 }
 
 .page {
-    line-height: 2rem;
-    min-width: calc(var(--onepix) * 3);
-    height: calc(var(--onepix) * 3);
+    line-height: 1rem;
+    min-width: calc(var(--onepix) * 2);
+    height: calc(var(--onepix) * 2);
     color: black;
-    margin: calc(var(--onepix) * 0.3);
+    margin: calc(var(--onepix) * 0.23);
     border: 2px solid white;
     border-radius: 7px;
     text-align: center;
     display: flex;
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: #fff;
     justify-content: center;
     align-items: center;
@@ -233,15 +238,12 @@ header {
 
 .slider_page {
     background-color:#04053D;
-    color: black;
+    color: white;
     /* width: 100vw; */
-    height: calc(100vh - var(--onepix) * 3.2);
-    /* display: none; */
-}
-
-.slider_page {
+    height: calc(100vh - var(--onepix) * 4.5);
     display: none;
 }
+
 
 
 
@@ -399,5 +401,30 @@ header {
 .nav_container{
     max-width: calc(var(--onepix) * 54);
     margin: 0 auto;
-    padding: 8px 0;
+    padding-top: 8px;
+}
+
+.information_slide{
+    border: 2px solid white ;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.information_slide_line{
+    border: 1px solid white;
+}
+
+.information_slide_title{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.information_slide_outer_border{
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
 }

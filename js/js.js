@@ -88,8 +88,25 @@ navigation.addEventListener('mousedown', mouseDownHandler)
 
 
 
-
 const navigationButtons = navigation.querySelectorAll('.page')
+let lastElementId = 0
+let lastElementClass 
+let currentElementClass
+
+
+for (let i = 1; i < sliders.length ;i++){
+  if (navigationButtons[i].dataset.type == 'information'){
+    navigationButtons[i].querySelector('i').classList.add('fi-br-information')
+  }
+  else if (navigationButtons[i].dataset.type == 'question'){
+    navigationButtons[i].querySelector('i').classList.add('fi-br-question')
+  }
+  else if (navigationButtons[i].dataset.type == 'keyboard'){
+    navigationButtons[i].querySelector('i').classList.add('fi-rr-keyboard')
+  }
+ 
+}
+
 navigationButtons.forEach(element => {
   
   element.addEventListener('click', function(e){
@@ -97,11 +114,33 @@ navigationButtons.forEach(element => {
     for (let i = 0; i < sliders.length ;i++){
       sliders[i].classList.remove('active')
       navigationButtons[i].classList.remove('active_page')
-      // navigationButtons[i].querySelector('i').classList.remove()
+      navigationButtons[i].querySelector('i').classList.remove('fi-br-clock-three')
     }
+    if (navigationButtons[lastElementId].dataset.type == 'information'){
+      lastElementClass = 'fi-br-information'
+    }
+    else if (navigationButtons[lastElementId].dataset.type == 'question'){
+      lastElementClass = 'fi-br-question'
+    }
+    else if (navigationButtons[lastElementId].dataset.type == 'keyboard'){
+      lastElementClass = 'fi-rr-keyboard'
+    }
+
+    if (navigationButtons[Number(element.dataset.id) - 1].dataset.type == 'information'){
+      currentElementClass = 'fi-br-information'
+    }
+    else if (navigationButtons[Number(element.dataset.id) - 1].dataset.type == 'question'){
+      currentElementClass = 'fi-br-question'
+    }
+    else if (navigationButtons[Number(element.dataset.id) - 1].dataset.type == 'keyboard'){
+      currentElementClass = 'fi-rr-keyboard'
+    }
+    navigationButtons[lastElementId].querySelector('i').classList.add(lastElementClass)
+    lastElementId = Number(element.dataset.id) - 1
     navigationButtons[Number(element.dataset.id) - 1].classList.add('active_page')
     sliders[Number(element.dataset.id) - 1].classList.add('active')
-    navigationButtons[Number(element.dataset.id) - 1].querySelector('i').classList.add('fi-rr-clock-three')
+    navigationButtons[Number(element.dataset.id) - 1].querySelector('i').classList.remove(currentElementClass)
+    navigationButtons[Number(element.dataset.id) - 1].querySelector('i').classList.add('fi-br-clock-three')
   })
 });
 

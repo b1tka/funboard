@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyboard</title>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css" integrity="sha512-AIwt5sjXSKDo4t0KSQ/eAuy43kQMc1hYtIKLxaFrHd26nQFzMo1FJdBIickVyGXnhm2xB2OOYBqMBgu3dBU4KA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,33 +32,43 @@
 <body>
     <div class="nav_container">
     <div class="navigation" id="slider_navigation">
-        <div data-id="1" data-complited="1" class="page active_page"><i class="fi"></i></div>
-        <div data-id="2" data-complited="1" class="page"><i class="fi "></i></div>
-        <div data-id="3" data-complited="1" class="page"><i class="fi "></i></div>
-        <div data-id="4" data-complited="1" class="page"><i class="fi "></i></div>
-        <div data-id="5" data-complited="1" class="page">5</div>
-        <div data-id="6" data-type="information" class="page"><i class="fi fi-rr-clock-three fi-rr-user fi-rr-info"></i></div>
-        <div data-id="7" class="page">7</div>
-        <div data-id="8" class="page">8</div>
-        <div data-id="9" class="page">9</div>
-        <div data-id="10" class="page">10</div>
-        <div data-id="11" class="page">11</div>
-        <div data-id="12" class="page">12</div>
-        <div data-id="13" class="page">13</div>
-        <div data-id="14" class="page">14</div>
-        <div data-id="15" class="page">15</div>
-        <div data-id="16" class="page">16</div>
-        <div data-id="17" class="page">17</div>
-        <div data-id="18" class="page">18</div>
-        <div data-id="19" class="page">19</div>
-        <div data-id="20" class="page">20</div>
-        <div data-id="21" class="page">21</div>
-        <div data-id="22" class="page">22</div>
-        <div data-id="23" class="page">23</div>
+        <div data-id="1" data-type="information" data-complited="1" class="page active_page"><i class="fi fi-br-clock-three"></i></div>
+        <div data-id="2" data-type="information" data-complited="1" class="page"><i class="fi"></i></div>
+        <div data-id="3" data-type="information" data-complited="1" class="page"><i class="fi"></i></div>
+        <div data-id="4" data-type="information" data-complited="1" class="page"><i class="fi"></i></div>
+        <div data-id="5" data-type="information" data-complited="1" class="page"><i class="fi"></i></div>
+        <div data-id="6" data-type="question" class="page"><i class="fi"></i></div>
+        <div data-id="7" data-type="keyboard" class="page"><i class="fi"></i></div>
+        <div data-id="8" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="9" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="10" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="11" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="12" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="13" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="14" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="15" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="16" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="17" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="18" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="19" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="20" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="21" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="22" data-type="information" class="page"><i class="fi"></i></div>
+        <div data-id="23" data-type="information" class="page"><i class="fi"></i></div>
     </div>
 
     <div id="slider_main">
-        <div class="slider_page active">1</div>
+        <div class="slider_page active">
+            <div class="information_slide_outer_border">
+                <!-- <div class="information_slide_title">
+                    <h1>Title</h1>
+                </div> -->
+                <div class="information_slide">
+                    <div class="main_information_slide">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="slider_page">2</div>
         <div class="slider_page">3</div>
         <div class="slider_page">4</div>
