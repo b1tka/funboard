@@ -1,5 +1,5 @@
-from flask import Flask, render_template, redirect, url_for
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask import Flask, render_template, redirect, url_for, jsonify
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 
 from extensions import db
@@ -62,6 +62,25 @@ def login():
     return render_template('login.html', form=form)
 
 
+@app.route('/api/get_category/<int:category_id>')
+@login_required
+def get_train(category_id):
+
+    def modify_task(task):
+        result = {
+            'id': task.id,
+            'name': task.name,
+            'content': task.content,
+            'type': task.type,
+            'result': any(list(filter(lambda result: result.user == current_user, task.results)))
+        }
+        return result
+
+    query = db.session.execute(db.select(Category).filter_by(id=category_id)).scalar_one()
+    json = list(map(modify_task, query.tasks))
+    return jsonify(json)
+
+
 @app.route('/main')
 @login_required
 def main():
@@ -77,9 +96,21 @@ def logout():
 
 @app.route('/leaderboard')
 def leaderboard():
+    task = Task(
+        name='Что такое клавиатура',
+        content='''Клавиатура — это устройство, позволяющее пользователю вводить информацию в компьютер. Она представляет собой набор клавиш (кнопок), расположенных в определённом порядке. Клавиатура используется для следующих целей:
+    Ввод данных: Пользователь нажимает клавиши, чтобы ввести буквы, цифры и знаки в компьютер. Это основной способ взаимодействия с текстовыми программами, редакторами и веб-страницами.
+    Управление системой: Клавиатура является аналогом компьютерной мыши. С помощью неё можно перемещаться по меню, выбирать опции, запускать приложения и выполнять другие действия.''',
+        type='info',
+        category_id=1
+    )
+    db.session.add(task)
+    db.session.commit()
     return '''leaderboard'''
 
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
+
+
 
