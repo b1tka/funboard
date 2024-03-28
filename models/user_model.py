@@ -10,7 +10,7 @@ class User(db.Model, UserMixin):
     surname = db.Column(db.String)
     password = db.Column(db.String)
 
-    results = db.relationship('Result', backref='user', lazy=True)
+    results = db.relationship('Result', backref='user', cascade='all,delete', lazy=True)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)

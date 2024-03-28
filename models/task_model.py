@@ -8,4 +8,5 @@ class Task(db.Model):
     type = db.Column(db.Integer)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
 
-    results = db.relationship('Result', backref='task', lazy=True)
+    results = db.relationship('Result', backref='task', cascade='all,delete', lazy=True)
+    questions = db.relationship('Question', backref='task', cascade='all,delete', lazy=True)
