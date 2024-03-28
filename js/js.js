@@ -145,6 +145,8 @@ navigationButtons.forEach(element => {
 });
 
 
+
+
 // const changeNavigationColor = function(){
   
 // }
