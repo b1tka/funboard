@@ -141,9 +141,9 @@ navigationButtons.forEach(element => {
     sliders[Number(element.dataset.id) - 1].classList.add('active')
     navigationButtons[Number(element.dataset.id) - 1].querySelector('i').classList.remove(currentElementClass)
     navigationButtons[Number(element.dataset.id) - 1].querySelector('i').classList.add('fi-br-clock-three')
+    
   })
 });
-
 
 
 

@@ -404,7 +404,7 @@ header {
     padding-top: 8px;
 }
 
-.information_slide{
+.practis_slide{
     border: 2px solid white ;
     /* border-radius: 1rem; */
     width: 100%;
@@ -412,16 +412,16 @@ header {
     
 }
 
-.information_slide_line{
+/* .information_slide_line{
     border: 1px solid white;
 }
 
 .information_slide_title{
     font-size: 1.4rem;
     text-align: center;
-}
+} */
 
-.information_slide_outer_border{
+.practcis_slide_outer_border{
     border: 2px solid white;
     border-radius: 1rem;
     padding: 10px;
@@ -429,12 +429,12 @@ header {
     width: 100%;
 }
 
-.navigation_information_slide{
+.navigation_practis_slide{
     display: flex;
     flex-direction: row;
     background-color: black;
     justify-content: space-between;
-    height: 25px;
+    height: 5.7%;
     align-items: center;
     line-height: 1rem;
     cursor: default;
@@ -504,9 +504,6 @@ header {
     flex-grow: 1;
 }
 
-.tab:not(.tab:first-child):hover{
-    background-color: rgba(46, 46, 46, 0.744);
-}
 
 .tab>.fi-rr-cross-small{
     transition: 0.2s linear;
@@ -520,6 +517,65 @@ header {
     background-color: rgba(130, 130, 130, 0.744);
 }
 
+
+
+.button_pressed{
+    background-color: red;
+}
+
+.main_practis_slide{
+    height: 87%;
+}
+.task_bar{
+    height: 7.3%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    
+}
+
+
+
+.task_bar_slide{
+    transition: 0.2s linear;
+    margin-right: 2px;
+    width: 33.5px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.task_bar_slide:hover{
+    background-color: rgba(46, 46, 46, 0.744);
+}
+
+.task_bar_slide>i{
+    font-size: 20px;
+    line-height: 1rem;
+}
+
 .selected{
     background-color: rgba(125, 125, 125, 0.744);
+}
+
+.tab:hover{
+    background-color: rgba(46, 46, 46, 0.744);
+}
+
+.selected_hover:hover{
+    background-color: rgba(125, 125, 125, 0.744);
+}
+
+.surface{
+    height: 100%;
+}
+
+.surface{
+    display: none;
+}
+.active_surface{
+    display: block !important;
 }
