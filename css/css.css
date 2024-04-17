@@ -434,7 +434,7 @@ header {
     flex-direction: row;
     background-color: black;
     justify-content: space-between;
-    height: 5.7%;
+    min-height: 5.7%;
     align-items: center;
     line-height: 1rem;
     cursor: default;
@@ -524,15 +524,17 @@ header {
 }
 
 .main_practis_slide{
-    height: 87%;
+    height: 92.7%;
+    position: relative;
 }
 .task_bar{
     height: 7.3%;
     display: flex;
     flex-direction: row;
     background-color: black;
-    
+    justify-content: space-between;
 }
+
 
 
 
@@ -548,6 +550,11 @@ header {
     
 }
 
+.task_bar_slide:last-child{
+    margin-right: 0;
+    border-left: 1px solid gray;
+}
+
 .task_bar_slide:hover{
     background-color: rgba(46, 46, 46, 0.744);
 }
@@ -557,7 +564,7 @@ header {
     line-height: 1rem;
 }
 
-.selected{
+.selected:not(:last-child){
     background-color: rgba(125, 125, 125, 0.744);
 }
 
@@ -578,4 +585,105 @@ header {
 }
 .active_surface{
     display: block !important;
+}
+
+.slide{
+    height: 100%;
+    display: none;
+}
+
+.active_slide{
+    display: block;
+}
+
+.desctop{
+    height: 100%;
+}
+.ico{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 5px;
+    user-select: none;
+    margin-bottom: 5px;
+}
+
+.ico>i{
+    font-size: 24px;
+}
+
+.ico:hover{
+    background-color: #007bff3b;
+}
+
+.desctop_ico{
+    width: 10px;
+}
+
+.empty_slide{
+    flex-grow: 10;
+}
+
+.windows{
+    transition: 0.2s linear;
+    margin-right: 2px;
+    width: 33.5px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.windows:hover{
+    background-color: rgba(46, 46, 46, 0.744);
+}
+
+.windows>i{
+    font-size: 20px;
+    line-height: 1rem;
+}
+
+.window{
+    z-index: 1;
+    bottom: 0 ;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color:  #0103048e;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.active_window{
+    display: flex;
+}
+
+.control_button{
+    padding: 2px;  
+    padding-top: 6px; 
+    display: flex;
+    flex-direction: row;
+    line-height: 2.2rem;
+    
+}
+
+.control_button>i{
+    font-size: 20px;
+    /* line-height: 2.2rem; */
+    margin-right: 10px;
+}
+
+.control_button:hover{
+    background: #464646;
+}
+
+.control_button>p{
+    font-size: 12px;
 }

@@ -1,4 +1,5 @@
 const navigationMenu = document.querySelectorAll('.tab')
+const slides = document.querySelectorAll('.slide')
 
 navigationMenu.forEach(element=>{
     
@@ -6,6 +7,7 @@ navigationMenu.forEach(element=>{
         for (let i = 0; i < navigationMenu.length; i ++){
             navigationMenu[i].classList.remove('selected')
             navigationMenu[i].classList.remove('selected_hover')
+            slides[i].classList.remove('active_slide')
         }
         let target = ev.target
         if(target.tagName == 'P'|| target.tagName == 'I'){
@@ -13,6 +15,7 @@ navigationMenu.forEach(element=>{
         }
         target.classList.add('selected')
         target.classList.add('selected_hover')
+        slides[target.dataset.tabid - 1].classList.add('active_slide')
     })
 })
 
@@ -33,6 +36,25 @@ taskBar.forEach(element=>{
         target.classList.add('selected')
         target.classList.add('selected_hover')
         surfaces[parseInt(target.dataset.surface_id) - 1].classList.add('active_surface')
+        myWindow.classList.remove('active_window')
+        isActive = false 
+            
     })
 })
 
+const myWindow = document.querySelector('.window')
+const windowsButton = document.querySelector('.windows')
+let isActive = false
+
+windowsButton.addEventListener('click', ev=>{
+    if (isActive){
+        myWindow.classList.remove('active_window')
+        isActive = false 
+        
+    }
+    else{
+        myWindow.classList.add('active_window')
+        isActive = true
+
+    }
+})
