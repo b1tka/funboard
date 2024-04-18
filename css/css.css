@@ -440,11 +440,27 @@ header {
     cursor: default;
 }
 
+.nb_navigation{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    min-height: 5.7%;
+    align-items: center;
+    line-height: 1rem;
+    cursor: default;
+    justify-content: flex-end;
+}
+
+.note_book_window{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
 .controls{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     flex-direction: row;
     
 }
@@ -484,6 +500,7 @@ header {
     flex-grow: 100;
     cursor: default;
     width: 25px;
+    user-select: none;
 }
 
 .tab{
@@ -564,7 +581,9 @@ header {
     line-height: 1rem;
 }
 
-.selected:not(:last-child){
+.browser_selected{background-color: rgba(125, 125, 125, 0.744);}
+
+.selected:not(:first-child):not(:last-child):not(:nth-child(2)){
     background-color: rgba(125, 125, 125, 0.744);
 }
 
@@ -572,8 +591,10 @@ header {
     background-color: rgba(46, 46, 46, 0.744);
 }
 
-.selected_hover:hover{
-    background-color: rgba(125, 125, 125, 0.744);
+.browser_selected_hover:hover{background-color: rgb(125, 125, 125);}
+
+.selected_hover:not(:first-child):not(:last-child):not(:nth-child(2)):hover{
+    background-color: rgb(125, 125, 125);
 }
 
 .surface{
@@ -653,7 +674,7 @@ header {
     bottom: 0 ;
     position: absolute;
     width: 200px;
-    height: 120px;
+    height: 100px;
     background-color:  #0103048e;
     display: none;
     flex-direction: column;
@@ -661,9 +682,6 @@ header {
     padding: 5px;
 }
 
-.active_window{
-    display: flex;
-}
 
 .control_button{
     padding: 2px;  
@@ -671,7 +689,7 @@ header {
     display: flex;
     flex-direction: row;
     line-height: 2.2rem;
-    
+    user-select: none;
 }
 
 .control_button>i{
@@ -686,4 +704,28 @@ header {
 
 .control_button>p{
     font-size: 12px;
+}
+
+.note_book_window{
+    top: 10%;
+    left: 20%;
+    position: absolute;
+    background-color: #464646;
+    width: 70%;
+    height: 70%;
+    border: 0px ;
+    border-radius: 2px;
+}
+
+.note_book_window{
+    display: none;
+}
+
+.active_window{
+    display: flex;
+}
+
+
+.slide_is_on:not(:first-child):not(:last-child){
+    border-bottom: 3px solid rgb(0, 208, 255);
 }
