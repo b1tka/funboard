@@ -236,11 +236,70 @@ header {
     display: flex;
 }
 
+.task{
+    margin-top: 4px;
+    border: 2px solid rgb(250, 252, 149);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    padding: 10px;
+    height: 8%;
+    width: 100%;
+    display: flex;
+    padding-top: 3px;
+    padding-bottom: 0px;
+
+    /* width: 100vw; */
+}
+
+.task_text{
+    flex-grow: 9;
+}
+
+.task_keyboard{
+    border: 1px solid white;
+    margin-top: 8px;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    line-height: 1rem;
+    border-radius: 10px;
+}
+
+
+
+
+.task_keyboard:hover{
+    border-color: #FDFF73;
+    color: #FDFF73;
+    background-color: rgba(231, 255, 163, 0.4);
+    transition: 0.4s;
+}
+
+.task_keyboard_pressed{
+    background-color: rgb(231, 255, 163);
+    border-color: #464646;
+    color: #464646;
+    transition: 0.4s;
+}
+
+.task_keyboard_pressed:hover{
+    border-color: #858585;
+    color: #858585;
+    background-color: rgba(217, 255, 0, 0.4);
+
+    transition: 0.4s;
+}
+
+
+
 .slider_page {
     background-color:#04053D;
     color: white;
     /* width: 100vw; */
-    height: calc(100vh - var(--onepix) * 4.5);
+    height: calc(100vh - var(--onepix) * 6);
     display: none;
 }
 
@@ -251,8 +310,28 @@ header {
     display: block;
 }
 
+.keyboard_window{
+    user-select: none;
+    z-index: 99;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    background-color: #04053D;
+}
+
+.keyboard_window_active{
+    display: block;
+}
 
 .keyboard_container {
+    border: 2px solid rgb(231, 255, 163);
+    border-radius: 20px;
+    padding: 10px;
+    /* background-color: rgba(1, 38, 46, 0.904); */
+
     max-width: 850px;
     margin: 0 auto;
 }
@@ -401,7 +480,7 @@ header {
 .nav_container{
     max-width: calc(var(--onepix) * 54);
     margin: 0 auto;
-    padding-top: 8px;
+    padding-top: 0px;
 }
 
 .practis_slide{
@@ -543,7 +622,9 @@ header {
 
 
 .button_pressed{
-    background-color: red;
+    transition: 0.4s;
+    background-color: rgb(231, 255, 163);
+    color: #464646;
 }
 
 .main_practis_slide{
@@ -604,7 +685,7 @@ header {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
+    /* top: 0; */
     left: 0;
     background-color: #04053D;
     z-index: 0;
@@ -690,7 +771,8 @@ header {
 
 .window{
     z-index: 0;
-    bottom: 0 ;
+    /* position: absolute !important; */
+    bottom: 0;
     position: absolute;
     width: 200px;
     height: 100px;
@@ -699,6 +781,12 @@ header {
     flex-direction: column;
     justify-content: space-around;
     padding: 5px;
+    
+}
+
+.active_window{
+    display: flex !important;
+    z-index: 100;
 }
 
 
@@ -755,9 +843,8 @@ header {
 }
 
 
-/* .active_window{
-    display: flex;
-} */
+
+
 
 
 .slide_is_on:not(:first-child):not(:last-child){
@@ -781,6 +868,7 @@ header {
     background-color: #fff;
     color: black;
     margin-left: 2px;
+    font-size: 20px;
     /* overflow: scroll ; */
 }
 
